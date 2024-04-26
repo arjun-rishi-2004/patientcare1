@@ -1,20 +1,25 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import LoginScreen from './LoginScreen';
+import FeaturePage from './FeaturePage';
+import MedicineReminderScreen from './MedicineReminderScreen';
+const Stack = createNativeStackNavigator();
+import { UserProvider } from './UserContext'; // Import the UserProvider
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+    <UserProvider>
+    <NavigationContainer>
+      <Stack.Navigator>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+        <Stack.Screen name="Login" component={LoginScreen} />
+        {/* <Stack.Screen name="Features" component={FeaturePage} /> */}
+              <Stack.Screen name="MedicineReminder" component={MedicineReminderScreen} />
+
+      </Stack.Navigator>
+    </NavigationContainer>
+    </UserProvider>
+  );
+};
+
+export default App;
