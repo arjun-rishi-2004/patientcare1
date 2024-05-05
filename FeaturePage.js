@@ -17,6 +17,8 @@ const FeaturePage = () => {
 
   const handleAppointmentReminder = () => {
     // Navigate to Appointment Reminder screen
+    navigation.navigate('AppointmentReminder');
+
   };
 
   const handleEmergencyAlert = () => {
@@ -35,7 +37,7 @@ const FeaturePage = () => {
   console.log("user",user);
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Welcome to  Features Page!</Text>
+      <Text style="font-family:consolas;">Welcome to  Take Care Bruh!</Text>
 
       <Button title="Medicine Reminder" onPress={handleMedicineReminder} />
       <Button title="Appointment Reminder" onPress={handleAppointmentReminder} />

@@ -49,7 +49,7 @@ const LoginScreen = () => {
   };
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'pink'}}>
       {isLoggedIn ? (
         <FeaturePage />
       ) : (
@@ -69,7 +69,7 @@ const LoginScreen = () => {
             secureTextEntry
             style={{ borderWidth: 1, padding: 5, marginBottom: 10, width: 200 }}
           />
-          <Button title="Login" onPress={handleLogin} />
+          <Button title="Login" onPress={handleLogin} color='#A3D8FF'/>
         </>
       )}
     </View>
